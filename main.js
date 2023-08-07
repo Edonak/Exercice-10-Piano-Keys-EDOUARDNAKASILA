@@ -5,6 +5,7 @@ keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
 
+//ceci est mon premier commentaire
 // Write named functions that change the color of the keys below
 
 
