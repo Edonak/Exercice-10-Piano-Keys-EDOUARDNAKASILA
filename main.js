@@ -5,8 +5,17 @@ keys.forEach(function(key){
   notes.push(document.getElementById(key));
 })
 
-//ceci est mon premier commentaire
 // Write named functions that change the color of the keys below
+
+let buttons = document.querySelectorAll("key");
+for (let section of buttons) {
+  // Ajouter un écouteur d'événement au clic
+  section.addEventListener("click", function() {
+    let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
+    button.style.backgroundColor = randomColor;
+  });
+}
+
 
 
 // Write a named function with event handler properties
