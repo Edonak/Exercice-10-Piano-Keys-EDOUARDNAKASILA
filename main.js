@@ -8,7 +8,7 @@ keys.forEach(function(key){
 // Write named functions that change the color of the keys below
 
 let buttons = document.querySelectorAll("key");
-for (let section of buttons) {
+for (let key of buttons) {
   // Ajouter un écouteur d'événement au clic
   section.addEventListener("click", function() {
     let randomColor = "#" + Math.floor(Math.random() * 16777215).toString(16);
