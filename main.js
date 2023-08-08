@@ -1,7 +1,6 @@
 // The keys and notes variables store the piano keys
 const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
 const notes = [];
-const text = document.getElementsByClassName('.black-keynote');
 keys.forEach(function (key) {
   notes.push(document.getElementById(key));
 })
@@ -24,6 +23,31 @@ function asignEvent() {
   note.play();
 }
 
+const keynotes = document.querySelectorAll('.keynote');
+const blKey = document.querySelectorAll('.black-keynote');
+
+
+// Ajouter un gestionnaire d'événements 'click' à chaque section de classe 'keynote'
+keynotes.forEach(function(keynote) {
+  keynote.addEventListener('mousedown', function() {
+    keynote.parentNode.style.backgroundColor = 'yellow';
+
+    keynote.addEventListener('mouseup',function() {
+      keynote.parentNode.style.backgroundColor = '';
+    });
+
+  });
+});
+blKey.forEach(function(blKey) {
+  blKey.addEventListener('mousedown', function() {
+    blKey.parentNode.style.backgroundColor = 'yellow';
+
+    blKey.addEventListener('mouseup',function() {
+      blKey.parentNode.style.backgroundColor = '';
+    });
+
+  });
+});
 //gestionnaires d'événements pour chaque note
 function addEventListenersToNotes(note) {
   note.addEventListener('mousedown', keyPlay);
@@ -102,12 +126,4 @@ startOver.onclick = function () {
   document.getElementById('letter-note-five').innerHTML = 'C';
   document.getElementById('word-six').innerHTML = 'YOU!';
   document.getElementById('letter-note-six').innerHTML = 'B';
-}
-
-function changeBg(e) {
-  e.style.backgroundColor ='yellow';
-
-  text.addEventListener('click', (e)=>{
-    changeBg(keys);
-  })
 }
