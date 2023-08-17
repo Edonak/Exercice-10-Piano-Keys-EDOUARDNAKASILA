@@ -7,15 +7,6 @@ keys.forEach(function (key) {
 
 //Write named functions that change the color of the keys below
 
-// Fonction qui change la couleur de font
-function keyPlay(event) {
-  event.target.style.backgroundColor = 'yellow';
-}
-//Fonction qui renvoie la couleur de fond des touches à leur valeur par défaut lorsqu'elles sont relâchées avec une chaîne vide
-function keyReturn(event) {
-  event.target.style.backgroundColor = '';
-}
-
 //Fonction qui joue la note correspondante lorsqu'une touche est cliquée
 function asignEvent() {
   const note = document.getElementById(`${this.dataset.note}`);
